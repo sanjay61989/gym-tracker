@@ -11,7 +11,7 @@ export class MemberListComponent {
   newDataKey = 'user';
 
   constructor(private dataSharingService: DataSharingService) {
-    this.fetchSharedData(this.newDataKey);
+
   }
   fetchSharedData(key: string) {
     this.dataSharingService.getData(key).subscribe(

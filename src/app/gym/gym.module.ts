@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EventService } from './EventService';
 import { MainComponent } from './main/main.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { MembershipFormComponent } from './membership-form/membership-form.component';
@@ -23,6 +24,11 @@ const routes: Routes = [
         path: 'schedule',
         component: ScheduleComponent,
       },
+      {
+        path: '',
+        redirectTo: 'memberlist',
+        pathMatch: 'full',
+      },
     ],
   },
 ];
@@ -35,5 +41,6 @@ const routes: Routes = [
     MainComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
+  providers: [EventService],
 })
 export class GymModule {}
